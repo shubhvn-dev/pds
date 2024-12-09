@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="add-to-order-show-items">
+  <h1>Available Items in "{{mainCategory}} - {{subCategory}}"</h1>
+  <p>Select the items you want to add to the current order:</p>
+  <form method="POST">
+    <input type="hidden" name="form_step" value="add_items" />
+    <table>
+      <tr>
+        <th>Select</th>
+        <th>ItemID</th>
+        <th>Description</th>
+        <th>Color</th>
+        <th>Is New?</th>
+        <th>Material</th>
+      </tr>
+      {% for item in items %}
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            name="selected_items"
+            value="{{ item.ItemID }}"
+          />
+        </td>
+        <td>{{ item.ItemID }}</td>
+        <td>{{ item.iDescription }}</td>
+        <td>{{ item.color }}</td>
+        <td>{{ 'Yes' if item.isNew else 'No' }}</td>
+        <td>{{ item.material }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+    <button type="submit">Add Selected Items to Order</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+</body>
+
+{% endblock %}

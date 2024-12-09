@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="user-related-orders">
+  <h1>Orders Involving {{ username }}</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Order Date</th>
+        <th>Order Notes</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if tasks %} {% for task in tasks %}
+      <tr>
+        <td>{{ task.orderID }}</td>
+        <td>{{ task.orderDate if task.orderDate else 'N/A' }}</td>
+        <td>{{ task.orderNotes }}</td>
+        <td>{{ task.Role }}</td>
+      </tr>
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="4">No orders found involving {{ username }}.</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</body>
+
+{% endblock %}

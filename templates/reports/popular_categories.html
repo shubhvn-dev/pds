@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+
+<body class="popular-categories">
+  <h1>Find Popular Categories</h1>
+
+  <!-- Date Selection Form -->
+  <form id="dateForm" method="GET" action="/reports/popular_categories">
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date" required />
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date" required />
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Results Section -->
+  <div id="results">
+    {% if categories %}
+    <h2>Popular Categories ({{ start_date }} to {{ end_date }})</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Main Category</th>
+          <th>Sub Category</th>
+          <th>Total Orders</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in categories %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ task.mainCategory }}</td>
+          <td>{{ task.subCategory }}</td>
+          <td>{{ task.totalOrders }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No data found for the selected date range.</p>
+    {% endif %}
+  </div>
+</body>
+
+{% endblock %}

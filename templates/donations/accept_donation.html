@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body class="accept-donation">
+  <h1>Accept Donation</h1>
+  <form method="POST">
+    <h3>Donor Info</h3>
+    <label for="donor_user">Donor Username:</label>
+    <select name="donor_user" id="donor_user" required>
+      {% for d in donors %}
+      <option value="{{ d }}">{{ d }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <h3>Item Info</h3>
+    <p>(Leave ItemID blank to auto-assign)</p>
+    <label for="item_id">ItemID (optional):</label>
+    <input type="text" name="item_id" id="item_id"><br><br>
+
+    <label for="iDescription">Description:</label>
+    <input type="text" name="iDescription" id="iDescription" required><br><br>
+
+    <label for="photo">Photo (URL or path):</label>
+    <input type="text" name="photo" id="photo"><br><br>
+
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color"><br><br>
+
+    <label for="isNew">Is New?</label>
+    <select name="isNew" id="isNew">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select><br><br>
+
+    <label for="hasPieces">Has more than 1 piece?</label>
+    <select name="hasPieces" id="hasPieces">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br><br>
+
+    <label for="material">Material:</label>
+    <input type="text" name="material" id="material" required><br><br>
+
+    <label for="mainCategory">Main Category:</label>
+    <select name="mainCategory" id="mainCategory" required>
+      {% for mc in main_categories %}
+      <option value="{{ mc }}">{{ mc }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label for="subCategory">Sub Category:</label>
+    <select name="subCategory" id="subCategory" required>
+      {% for sc in sub_categories %}
+      <option value="{{ sc }}">{{ sc }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <h3>Piece Details (At least one piece is mandatory)</h3>
+    <p>If 'Has Pieces' is set to No, you can only have one piece (the item itself). If it's Yes, you can add more pieces.</p>
+
+    <input type="hidden" name="num_pieces" id="num_pieces" value="1">
+    <div id="pieces_container">
+      <!-- Initial mandatory piece -->
+      <h4>Piece 1</h4>
+      <label>pieceNum:</label> <input type="text" name="pieceNum_1"><br>
+      <label>pDescription:</label><input type="text" name="pDescription_1"><br>
+      <label>length:</label><input type="text" name="length_1"><br>
+      <label>width:</label><input type="text" name="width_1"><br>
+      <label>height:</label><input type="text" name="height_1"><br>
+      <label>roomNum:</label><input type="text" name="roomNum_1"><br>
+      <label>shelfNum:</label><input type="text" name="shelfNum_1"><br>
+      <label>pNotes:</label><input type="text" name="pNotes_1"><br><br>
+    </div>
+
+    <button type="button" id="add_piece_button">Add Another Piece</button><br><br>
+
+    <button type="submit">Accept Donation</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% endwith %}
+
+  <script src="{{ url_for('static', filename='accept_donation.js') }}"></script>
+  <script>
+    // Additional JS to toggle add_piece_button based on hasPieces
+    const hasPiecesSelect = document.getElementById('hasPieces');
+    const addPieceButton = document.getElementById('add_piece_button');
+
+    function toggleAddPieceButton() {
+      if (hasPiecesSelect.value === 'false') {
+        // If hasPieces is false, disable/hide add piece button
+        addPieceButton.style.display = 'none';
+      } else {
+        addPieceButton.style.display = 'inline-block';
+      }
+    }
+
+    hasPiecesSelect.addEventListener('change', toggleAddPieceButton);
+    // Initialize on page load
+    toggleAddPieceButton();
+  </script>
+</body>
+
+{% endblock %}

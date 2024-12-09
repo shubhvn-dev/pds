@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="find-item-details">
+  <h1>Find Order Items</h1>
+  <form method="POST">
+    <label for="order_id">Order ID:</label>
+    <input type="text" name="order_id" id="order_id" required />
+    <button type="submit">Find</button>
+  </form>
+  <br />
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %} {% if order_details %} {% for item in order_details
+  %}
+  <div class="item-block">
+    <div class="item-header">
+      ItemID: {{ item.ItemID }} - {{ item.iDescription }} (Color: {{ item.color
+      }})
+    </div>
+    {% if item.pieces and item.pieces|length > 0 %}
+    <table>
+      <tr>
+        <th>Piece Number</th>
+        <th>Piece Description</th>
+        <th>Length</th>
+        <th>Width</th>
+        <th>Height</th>
+        <th>Room Number</th>
+        <th>Shelf Number</th>
+        <th>Shelf</th>
+        <th>Shelf Description</th>
+      </tr>
+      {% for piece in item.pieces %}
+      <tr>
+        <td>{{ piece.pieceNum }}</td>
+        <td>{{ piece.pDescription }}</td>
+        <td>{{ piece.length }}</td>
+        <td>{{ piece.width }}</td>
+        <td>{{ piece.height }}</td>
+        <td>{{ piece.roomNum }}</td>
+        <td>{{ piece.shelfNum }}</td>
+        <td>{{ piece.shelf }}</td>
+        <td>{{ piece.shelfDescription }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %} {% if item.hasPieces %}
+    <p>
+      No pieces found for this item, although it should have pieces. See above
+      warnings.
+    </p>
+    {% else %}
+    <p>This item does not have pieces.</p>
+    {% endif %} {% endif %}
+  </div>
+  {% endfor %} {% endif %}
+</body>
+
+{% endblock %}

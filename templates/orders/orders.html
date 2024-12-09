@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="all-orders">
+  <h1>Orders</h1>
+
+  <!-- Display Flash Messages -->
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Order Date</th>
+        <th>Order Notes</th>
+        <th>Status</th>
+        <th>Supervisor</th>
+        <th>Client</th>
+        <th>Change Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.orderID }}</td>
+        <td>{{ order.orderDate }}</td>
+        <td>{{ order.orderNotes }}</td>
+        <td>{{ order.stat }}</td>
+        <td>{{ order.supervisor }}</td>
+        <td>{{ order.client }}</td>
+        <td>
+          <!-- Show dropdown to change status if supervisor is the logged-in user -->
+          {% if order.supervisor == logged_in_user and order.stat == 'prepared'
+          %}
+          <form
+            action="/orders/update_status/{{ order['orderID'] }}"
+            method="POST"
+          >
+            <select name="status">
+              <option value="Delivering">Delivering</option>
+            </select>
+            <button type="submit">Update Status</button>
+          </form>
+          {% else %}
+          <p>No status change available</p>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+{% endblock %}

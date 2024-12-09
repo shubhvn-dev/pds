@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+
+<body class="year-end-report">
+  <!-- Year selection form -->
+  <form method="POST" action="/reports/year_end_report">
+    <label for="year">Select Year:</label>
+    <input
+      type="number"
+      id="year"
+      name="year"
+      value="{{ year }}"
+      min="2000"
+      max="2030"
+    />
+    <button type="submit">Generate Report</button>
+  </form>
+
+  <h2>Year-End Report for {{ year }}</h2>
+
+  <h3>Summary</h3>
+  <p><strong>Number of clients served: </strong>{{ clients_served }}</p>
+  <p><strong>Number of orders processed: </strong>{{ orders_processed }}</p>
+
+  <h3>Items Donated by Category</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Main Category</th>
+        <th>Sub Category</th>
+        <th>Items Donated</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in donated_items %}
+      <tr>
+        <td>{{ item.mainCategory }}</td>
+        <td>{{ item.subCategory }}</td>
+        <td>{{ item.donated_items }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Top 5 Most Popular Categories</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Main Category</th>
+        <th>Sub Category</th>
+        <th>Order Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in top_categories %}
+      <tr>
+        <td>{{ category.mainCategory }}</td>
+        <td>{{ category.subCategory }}</td>
+        <td>{{ category.order_count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Top 5 Clients with Most Donations</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Client ID</th>
+        <th>Donation Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in top_clients_donations %}
+      <tr>
+        <td>{{ client.userName }}</td>
+        <td>{{ client.donation_count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+{% endblock %}

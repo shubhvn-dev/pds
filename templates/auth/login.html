@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="login-page">
+  <h1 class="login-page">Log In</h1>
+  <form method="post" action="{{ url_for('auth.login') }}" class="login-form">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required />
+    <input type="submit" value="Log In" />
+    <div class="register-section">
+      <p>
+        New user? <a href="{{ url_for('auth.register') }}">Register here</a>
+      </p>
+    </div>
+  </form>
+</body>
+{% endblock %}

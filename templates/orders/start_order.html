@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="start-order">
+  <h1>Start a New Order</h1>
+  <form method="POST">
+    <label for="client_user">Client Username:</label>
+    <select name="client_user" id="client_user" required>
+      <option value="">Select a client</option>
+      {% for client in clients %}
+      <option value="{{ client['userName'] }}">{{ client['userName'] }}</option>
+      {% endfor %}</select
+    ><br /><br />
+
+    <label for="order_notes">Order Notes (optional):</label><br />
+    <textarea
+      name="order_notes"
+      placeholder="Max 200 characters"
+      id="order_notes"
+      rows="4"
+      cols="50"
+      maxlength="200"
+    ></textarea
+    ><br /><br />
+
+    <button type="submit">Start Order</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+</body>
+
+{% endblock %}

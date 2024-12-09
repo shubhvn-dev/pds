@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="find-item-for-itemif">
+  <h1>Find Single Item</h1>
+  <form method="POST">
+    <label for="item_id">Item ID:</label>
+    <input type="text" name="item_id" id="item_id" required />
+    <button type="submit">Find</button>
+  </form>
+  <br />
+
+  <!-- Display flashed messages (errors, warnings, informational messages) -->
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %} {% if items %}
+  <h2>Item Details</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <th>ItemID</th>
+      <th>Description</th>
+      <th>Piece Number</th>
+      <th>Piece Description</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Room Number</th>
+      <th>Shelf Number</th>
+      <th>Shelf</th>
+      <th>Shelf Description</th>
+    </tr>
+    {% for row in items %}
+    <tr>
+      <td>{{ row.ItemID }}</td>
+      <td>{{ row.iDescription }}</td>
+      <td>{{ row.pieceNum }}</td>
+      <td>{{ row.pDescription }}</td>
+      <td>{{ row.length }}</td>
+      <td>{{ row.width }}</td>
+      <td>{{ row.height }}</td>
+      <td>{{ row.roomNum }}</td>
+      <td>{{ row.shelfNum }}</td>
+      <td>{{ row.shelf }}</td>
+      <td>{{ row.shelfDescription }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <!-- If no items are found or no pieces for the item, 
+               rely on flashed messages above to inform the user. -->
+  {% endif %}
+</body>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="prepare-order-search">
+  <h1>Prepare Order for Delivery</h1>
+  <form method="POST">
+    <input type="hidden" name="step" value="search" />
+    <p>You may search by Order ID or by Client's Username:</p>
+    <label for="order_id">Order ID:</label>
+    <input type="text" name="order_id" id="order_id" /><br /><br />
+
+    <label for="client_user">Client Username:</label>
+    <input type="text" name="client_user" id="client_user" /><br /><br />
+
+    <button type="submit">Search Order</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+</body>
+
+{% endblock %}

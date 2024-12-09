@@ -1,0 +1,1697 @@
+html {
+  font-family: sans-serif;
+  background: #eee;
+  padding: 1rem;
+}
+
+body {
+  background: white;
+}
+
+h1 {
+  font-family: serif;
+  color: #377ba8;
+}
+
+a {
+  color: #377ba8;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid lightgray;
+}
+
+nav {
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+nav h1 {
+  flex: auto;
+  margin: 0;
+}
+
+nav h1 a {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a,
+nav ul li span,
+header .action {
+  display: block;
+  padding: 0.5rem;
+}
+
+.content {
+  padding: 0 1rem 1rem;
+}
+
+.content > header {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: flex-end;
+}
+
+.content > header h1 {
+  flex: auto;
+  margin: 1rem 0 0.25rem 0;
+}
+
+.flash {
+  margin: 1em 0;
+  padding: 1em;
+  background: #cae6f6;
+  border: 1px solid #377ba8;
+}
+
+.post > header {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.85em;
+}
+
+.post > header > div:first-of-type {
+  flex: auto;
+}
+
+.post > header h1 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.post .about {
+  color: slategray;
+  font-style: italic;
+}
+
+.post .body {
+  white-space: pre-line;
+}
+
+.content:last-child {
+  margin-bottom: 0;
+}
+
+.content form {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.content input,
+.content textarea {
+  margin-bottom: 1em;
+}
+
+.content textarea {
+  min-height: 12em;
+  resize: vertical;
+}
+
+input.danger {
+  color: #cc2f2e;
+}
+
+input[type="submit"] {
+  align-self: start;
+  min-width: 10em;
+}
+
+.location-actions {
+  display: flex;
+  align-items: center;
+}
+
+.event {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.timestamp {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.label {
+  color: #007bff;
+}
+.tempraised {
+  color: #ff0000;
+}
+
+body.login-page {
+  background-color: #e8f5e9; /* Light green background */
+  color: #2e7d32; /* Dark green foreground */
+  font-family: Arial, sans-serif;
+}
+
+form.login-form {
+  /* Form-specific styles for login */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px; /* Curved corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevation */
+  max-width: 400px;
+  margin: 100px auto; /* Center the form */
+}
+
+h1.login-page {
+  text-align: center; /* Center the heading */
+  color: #4caf50; /* Green theme for heading */
+  font-family: Arial, sans-serif;
+}
+
+body.login-page input[type="text"],
+body.login-page input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #b2dfdb; /* Light teal border */
+  border-radius: 8px; /* Rounded corners */
+  box-sizing: border-box; /* Prevent overflow due to padding */
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+body.login-page input[type="text"]:focus,
+body.login-page input[type="password"]:focus {
+  border-color: #4caf50; /* Green border on focus */
+}
+
+/* Styles for the submit button */
+body.login-page input[type="submit"] {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px; /* Circular edges */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button elevation */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.login-page input[type="submit"]:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+body.login-page input[type="submit"]:active {
+  background-color: #2e7d32; /* Even darker green on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced elevation */
+  transform: scale(0.98); /* Slight shrink on click */
+}
+
+/* Register section styling */
+.register-section {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-section p {
+  color: #2e7d32; /* Dark green text */
+  margin: 0;
+}
+
+.register-section a {
+  color: #4caf50; /* Green link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register-section a:hover {
+  color: #388e3c; /* Darker green on hover */
+}
+
+body.register-page {
+  background-color: #e8f5e9; /* Light green background */
+  color: #2e7d32; /* Dark green text */
+  font-family: Arial, sans-serif;
+}
+
+.register-page h1 {
+  text-align: center;
+  color: #388e3c;
+}
+
+.register-header {
+  text-align: center;
+  color: #4caf50; /* Green header color */
+  font-family: Arial, sans-serif;
+}
+
+form.register-form {
+  background-color: #ffffff; /* White form background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevation */
+  max-width: 500px;
+  margin: 100px auto; /* Centering the form */
+}
+
+form.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+form.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #b2dfdb; /* Light teal border */
+  border-radius: 8px; /* Rounded corners */
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+form.register-form input:focus {
+  border-color: #4caf50; /* Green border on focus */
+}
+
+form.register-form input[type="submit"] {
+  background-color: #4caf50; /* Green submit button */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px; /* Rounded button corners */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button elevation */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form.register-form input[type="submit"]:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+form.register-form input[type="submit"]:active {
+  background-color: #2e7d32; /* Even darker green on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced elevation */
+  transform: scale(0.98); /* Slight shrink on click */
+}
+
+/* Login section styling */
+.login-section {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-section p {
+  color: #2e7d32; /* Dark green text */
+  margin: 0;
+}
+
+.login-section a {
+  color: #4caf50; /* Green link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-section a:hover {
+  color: #388e3c; /* Darker green on hover */
+}
+
+/* Popular Categories Page Specific Styles */
+.popular-categories {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.popular-categories h1 {
+  text-align: center;
+  color: #4caf50;
+}
+
+.popular-categories h2 {
+  text-align: center;
+  color: #4caf50;
+}
+
+.popular-categories form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.popular-categories form label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.popular-categories input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popular-categories button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popular-categories button[type="submit"]:hover {
+  background-color: #388e3c;
+}
+
+.popular-categories table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popular-categories th {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.popular-categories td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.popular-categories tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.popular-categories tr:hover {
+  background-color: #e8f5e8;
+}
+
+.popular-categories .no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f44336;
+}
+
+.popular-categories #results {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .popular-categories form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .popular-categories form input[type="date"],
+  .popular-categories form button[type="submit"] {
+    width: 100%;
+  }
+
+  .popular-categories table th,
+  .popular-categories table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Year-End Report Page Styles */
+.year-end-report {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.year-end-report h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.year-end-report h2 {
+  color: #4caf50;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.year-end-report h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #333;
+}
+
+.year-end-report p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.year-end-report table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.year-end-report table,
+.year-end-report th,
+.year-end-report td {
+  border: 1px solid #ddd;
+}
+
+.year-end-report th,
+.year-end-report td {
+  padding: 12px;
+  text-align: left;
+}
+
+.year-end-report th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.year-end-report td {
+  background-color: #fff;
+}
+
+.year-end-report tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.year-end-report tr:hover td {
+  background-color: #f1f1f1;
+}
+
+.year-end-report form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.year-end-report label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.year-end-report input[type="number"] {
+  padding: 8px;
+  font-size: 1rem;
+  width: 150px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.year-end-report button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.year-end-report button:hover {
+  background-color: #45a049;
+}
+
+.year-end-report table thead {
+  background-color: #f8f9fa;
+}
+
+.year-end-report table thead th {
+  text-transform: uppercase;
+}
+
+.year-end-report table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.year-end-report table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* User Related Orders Page Styles */
+.user-related-orders {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.user-related-orders h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.user-related-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.user-related-orders table,
+.user-related-orders th,
+.user-related-orders td {
+  border: 1px solid #ddd;
+}
+
+.user-related-orders th,
+.user-related-orders td {
+  padding: 12px;
+  text-align: left;
+}
+
+.user-related-orders th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-related-orders td {
+  background-color: #fff;
+}
+
+.user-related-orders tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.user-related-orders tr:hover td {
+  background-color: #f1f1f1;
+}
+
+.user-related-orders tr td[colspan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+.user-related-orders table thead {
+  background-color: #f8f9fa;
+}
+
+.user-related-orders table thead th {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.user-related-orders table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.user-related-orders table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.user-related-orders table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+.user-related-orders table td:nth-child(2) {
+  font-style: italic;
+  color: #555;
+}
+
+.user-related-orders table td,
+.user-related-orders th {
+  border: 1px solid #ddd;
+}
+
+/* Start Order Page Styles */
+.start-order {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.start-order h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.start-order form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.start-order form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.start-order form select,
+.start-order form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.start-order form textarea {
+  resize: vertical;
+}
+
+.start-order form button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-order form button:hover {
+  background-color: #45a049;
+}
+
+.start-order .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.start-order .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.start-order .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.start-order .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Add to Order Select Category Page Styles */
+.add-to-order-category {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.add-to-order-category h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.add-to-order-category p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-to-order-category form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-order-category form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-to-order-category form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.add-to-order-category form button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-to-order-category form button:hover {
+  background-color: #45a049;
+}
+
+.add-to-order-category .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-to-order-category .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-to-order-category .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.add-to-order-category .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Styling for Select2 dropdown */
+.add-to-order-category .select2-container .select2-selection--single {
+  height: 38px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.add-to-order-category .select2-container .select2-selection__arrow {
+  top: 50%;
+  margin-top: -12px;
+}
+
+.add-to-order-category
+  .select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  line-height: 30px;
+}
+
+/* Add to Order Show Items Page Styles */
+.add-to-order-show-items {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  color: #333;
+}
+
+.add-to-order-show-items h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.add-to-order-show-items p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-to-order-show-items form {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-order-show-items table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.add-to-order-show-items table th,
+.add-to-order-show-items table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.add-to-order-show-items table th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.add-to-order-show-items table td {
+  background-color: #f9f9f9;
+}
+
+.add-to-order-show-items table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.add-to-order-show-items table td input[type="checkbox"] {
+  margin: 0;
+}
+
+.add-to-order-show-items form button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-to-order-show-items form button:hover {
+  background-color: #45a049;
+}
+
+.add-to-order-show-items .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-to-order-show-items .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-to-order-show-items .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.add-to-order-show-items .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Find Item Details by ID Page Styles */
+.find-item-details {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  color: #333;
+}
+
+.find-item-details h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.find-item-details form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.find-item-details form label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.find-item-details form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.find-item-details form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.find-item-details form button:hover {
+  background-color: #45a049;
+}
+
+.find-item-details .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.find-item-details .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.find-item-details .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.find-item-details .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+.find-item-details .item-block {
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.find-item-details .item-header {
+  font-size: 1.4rem;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.find-item-details .item-block table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.find-item-details .item-block table th,
+.find-item-details .item-block table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.find-item-details .item-block table th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.find-item-details .item-block table td {
+  background-color: #f9f9f9;
+}
+
+.find-item-details .item-block table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+/* Prepare Order Search Page Styles */
+.prepare-order-search {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+  color: #333;
+}
+
+.prepare-order-search h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.prepare-order-search form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prepare-order-search form label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.prepare-order-search form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.prepare-order-search form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.prepare-order-search form button:hover {
+  background-color: #45a049;
+}
+
+.prepare-order-search .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prepare-order-search .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prepare-order-search .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.prepare-order-search .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Prepare Order Select Order Page Styles */
+.prepare-order-select-order {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+  color: #333;
+}
+
+.prepare-order-select-order h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.prepare-order-select-order form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prepare-order-select-order form label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.prepare-order-select-order form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.prepare-order-select-order form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.prepare-order-select-order form button:hover {
+  background-color: #45a049;
+}
+
+.prepare-order-select-order .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prepare-order-select-order .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prepare-order-select-order .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.prepare-order-select-order .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Prepare Order Show Items Page Styles */
+.prepare-order-show-items {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+  color: #333;
+}
+
+.prepare-order-show-items h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.prepare-order-show-items h2 {
+  color: #4caf50;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.prepare-order-show-items table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.prepare-order-show-items table th,
+.prepare-order-show-items table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.prepare-order-show-items table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.prepare-order-show-items form {
+  text-align: center;
+}
+
+.prepare-order-show-items form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prepare-order-show-items form button:hover {
+  background-color: #45a049;
+}
+
+.prepare-order-show-items .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prepare-order-show-items .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prepare-order-show-items .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.prepare-order-show-items .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Find Item for Itemif Page Styles */
+.find-item-for-itemif {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+  color: #333;
+}
+
+.find-item-for-itemif h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.find-item-for-itemif h2 {
+  color: #4caf50;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.find-item-for-itemif table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.find-item-for-itemif table th,
+.find-item-for-itemif table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.find-item-for-itemif table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.find-item-for-itemif form {
+  text-align: center;
+  max-width: 500px; /* Add a max-width for the form to restrict it */
+  margin: 0 auto; /* Center the form */
+}
+
+.find-item-for-itemif form input,
+.find-item-for-itemif form button {
+  width: auto; /* Allow the input and button to adjust based on content */
+  max-width: 100%; /* Ensure they don't stretch beyond the form container */
+  padding: 10px 15px; /* Padding for better spacing */
+  margin-bottom: 10px; /* Space between form elements */
+  border: 2px solid #ccc; /* Border for the input field */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.find-item-for-itemif form button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.find-item-for-itemif form button:hover {
+  background-color: #45a049;
+}
+
+.find-item-for-itemif .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.find-item-for-itemif .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.find-item-for-itemif .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.find-item-for-itemif .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Accept Donation Page Styles */
+.accept-donation {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+  color: #333;
+}
+
+.accept-donation h1 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.accept-donation h3 {
+  color: #4caf50;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.accept-donation h4 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.accept-donation p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.accept-donation form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accept-donation form input,
+.accept-donation form select,
+.accept-donation form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.accept-donation form input[type="text"],
+.accept-donation form input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.accept-donation form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.accept-donation form button:hover {
+  background-color: #45a049;
+}
+
+.accept-donation form input[type="text"]:focus,
+.accept-donation form select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.accept-donation .flash-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accept-donation .flash-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accept-donation .flash-messages ul li {
+  margin-bottom: 10px;
+}
+
+.accept-donation .flash-messages ul li:last-child {
+  margin-bottom: 0;
+}
+
+.homepage {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for Content */
+.homepage .content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Tile Styling for Each List Item */
+.homepage ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the tiles */
+}
+
+.homepage ul li {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 220px; /* Fixed width for each tile */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Hover Effect for Tiles */
+.homepage ul li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.homepage h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Paragraph Styling */
+.homepage p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Links Styling Inside List Items */
+.homepage ul li a {
+  text-decoration: none;
+  color: #45a049;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.homepage ul li a:hover {
+  color: black;
+}
+
+.all-orders {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.all-orders h1 {
+  text-align: center;
+  color: #4caf50;
+}
+
+.all-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.all-orders th,
+.all-orders td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.all-orders th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.all-orders tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.all-orders tr:hover {
+  background-color: #f1f1f1;
+}
+
+.all-orders td {
+  font-size: 14px;
+}
+
+.all-orders td form {
+  display: inline;
+}
+
+.all-orders select {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.all-orders button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.all-orders button:hover {
+  background-color: #45a049;
+}
+
+.all-orders p {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.all-orders ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.all-orders ul li {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 5px;
+}

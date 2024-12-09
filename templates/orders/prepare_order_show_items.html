@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+
+<body class="prepare-order-show-items">
+  <h1>Order Details</h1>
+  <p>
+    Order ID: {{ order.orderID }}<br />
+    Supervisor: {{ order.supervisor }}<br />
+    Client: {{ order.client }}<br />
+    Date: {{ order.orderDate }}<br />
+    Notes: {{ order.orderNotes }}
+  </p>
+
+  <h2>Items in this order</h2>
+  <table>
+    <tr>
+      <th>ItemID</th>
+      <th>Description</th>
+      <th>Color</th>
+      <th>New?</th>
+      <th>Material</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.ItemID }}</td>
+      <td>{{ item.iDescription }}</td>
+      <td>{{ item.color }}</td>
+      <td>{{ 'Yes' if item.isNew else 'No' }}</td>
+      <td>{{ item.material }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <form method="POST">
+    <input type="hidden" name="step" value="prepare_items" />
+    <input type="hidden" name="order_id" value="{{ order.orderID }}" />
+    <button type="submit">Prepare for Delivery</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+</body>
+
+{% endblock %}

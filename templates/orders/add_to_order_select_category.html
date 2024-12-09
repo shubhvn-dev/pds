@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="add-to-order-category">
+  <h1>Add Items to Current Order</h1>
+  <p>Select a category and subcategory to view available items:</p>
+
+  <form method="POST">
+    <input type="hidden" name="form_step" value="select_category" />
+
+    <!-- Main Category Dropdown -->
+    <label for="mainCategory">Main Category:</label>
+    <select name="mainCategory" id="mainCategory" required>
+      <option value="">Select Main Category</option>
+      {% for category in main_categories %}
+      <option value="{{ category.mainCategory }}">
+        {{ category.mainCategory }}
+      </option>
+      {% endfor %}</select
+    ><br /><br />
+
+    <!-- Sub Category Dropdown -->
+    <label for="subCategory">Sub Category:</label>
+    <select name="subCategory" id="subCategory" required>
+      <option value="">Select Sub Category</option>
+      {% for category in sub_categories %}
+      <option value="{{ category.subCategory }}">
+        {{ category.subCategory }}
+      </option>
+      {% endfor %}</select
+    ><br /><br />
+
+    <button type="submit">Show Available Items</button>
+  </form>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <div class="flash-messages">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Select2 for searchable dropdowns
+      $("#mainCategory").select2();
+      $("#subCategory").select2();
+    });
+  </script>
+</body>
+
+{% endblock %}

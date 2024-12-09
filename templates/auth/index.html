@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block header %} {% endblock %} {% block content %}
+<body class="homepage">
+  <div class="container">
+    <h1>Welcome</h1>
+
+    {% if role == 'client' %}
+    <div class="tile">
+      <p>Hello, valued client! Here’s what you can do:</p>
+      <ul>
+        <li><a href="/orders/user_related_orders">User Orders</a></li>
+      </ul>
+    </div>
+    {% elif role == 'staff' %}
+    <div class="tile">
+      <p>Hello, staff member! Here are your tasks:</p>
+      <ul>
+        <li><a href="/items/find_item">Find Item</a></li>
+        <li><a href="/reports/year_end_report">Year-End Report</a></li>
+        <li><a href="/reports/popular_categories">Popular Categories</a></li>
+        <li><a href="/orders/find_order_items">Find Items in Order</a></li>
+        <li><a href="/orders/user_related_orders">User Orders</a></li>
+        <li><a href="/orders/start_order">Start Order</a></li>
+        <li><a href="/orders/add_to_order">Add Items to Order</a></li>
+        <li><a href="/orders/prepare_order">Prepare Order</a></li>
+        <li><a href="/orders">All Orders</a></li>
+        <li><a href="/donations/accept_donation">Accept Donation</a></li>
+      </ul>
+    </div>
+    {% elif role == 'supervisor' %}
+    <div class="tile">
+      <p>Hello, staff member! Here are your tasks:</p>
+      <ul>
+        <li><a href="/items/find_item">Find Item</a></li>
+        <li><a href="/reports/year_end_report">Year-End Report</a></li>
+        <li><a href="/reports/popular_categories">Popular Categories</a></li>
+        <li><a href="/orders/find_order_items">Find Items in Order</a></li>
+        <li><a href="/orders/user_related_orders">User Orders</a></li>
+        <li><a href="/orders/start_order">Start Order</a></li>
+        <li><a href="/orders/add_to_order">Add Items to Order</a></li>
+        <li><a href="/orders/prepare_order">Prepare Order</a></li>
+        <li><a href="/donations/accept_donation">Accept Donation</a></li>
+        <li><a href="/users/staff_register">New Staff</a></li>
+      </ul>
+    </div>
+    {% else %}
+    <div class="tile">
+      <p>Welcome, {{ current_user.id }}! Your role is: {{ role }}</p>
+      <p>Contact support if you need access to specific features.</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+{% endblock %}
